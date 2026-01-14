@@ -321,7 +321,9 @@ A vector database is a specialized database designed to store, index, and query 
 | **ChromaDB** | Varies | Millions | 1,000-5,000 | Good | Very Low |
 | **Qdrant** | <20ms | Billions | 50,000+ | Excellent | Low-Medium |
 | **FAISS** | <1ms (in-memory) | Billions (RAM limited) | 1,000,000+ | Excellent | High (library) |
-| **pgvector** | 50-200ms | Hundreds of thousands | 100-1,000 | Good | Low (if using Postgres) |
+| **pgvector** | 50-200ms | Hundreds of thousands | 100-1,000* | Good | Low (if using Postgres) |
+
+*pgvector's lower throughput reflects PostgreSQL's general-purpose architecture rather than vector-optimized design
 
 **Performance Rating Legend**:
 - **Query Latency**: Typical p95 response time for similarity search
@@ -434,8 +436,8 @@ When choosing a vector database, consider:
 - [pgvector GitHub](https://github.com/pgvector/pgvector)
 
 ### Benchmarks and Comparisons
-- [ann-benchmarks.com](https://ann-benchmarks.com/) - Comprehensive ANN algorithm benchmarks
-- [VectorDBBench](https://github.com/zilliztech/VectorDBBench) - Open-source vector database benchmarking tool
+- [ann-benchmarks.com](https://ann-benchmarks.com/) - Comprehensive ANN algorithm benchmarks across different implementations
+- [VectorDBBench](https://github.com/zilliztech/VectorDBBench) - Open-source benchmarking tool for comparing vector database performance across multiple workloads and scenarios
 
 ### Learning Resources
 - [Vector Databases: What You Need to Know](https://www.pinecone.io/learn/vector-database/)
