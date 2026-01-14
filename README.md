@@ -313,20 +313,27 @@ A vector database is a specialized database designed to store, index, and query 
 
 ## Performance Comparison
 
-| Database | Query Latency | Max Scale | Throughput | Memory Efficiency | Setup Complexity |
-|----------|---------------|-----------|------------|-------------------|------------------|
-| **Pinecone** | <100ms | Billions | Very High | Good | Very Low (SaaS) |
-| **Milvus** | <10ms (optimized) | Billions+ | Very High | Good | High |
-| **Weaviate** | <50ms | Millions | High | Medium | Medium |
-| **ChromaDB** | Varies | Millions | Medium | Good | Very Low |
-| **Qdrant** | <20ms | Billions | Very High | Excellent | Low-Medium |
-| **FAISS** | <1ms (in-memory) | Billions (RAM limited) | Extremely High | Excellent | High (library) |
-| **pgvector** | 50-200ms | Hundreds of thousands | Medium | Good | Low (if using Postgres) |
+| Database | Query Latency | Max Scale | Throughput (QPS) | Memory Efficiency | Setup Complexity |
+|----------|---------------|-----------|------------------|-------------------|------------------|
+| **Pinecone** | <100ms | Billions | 10,000+ | Good | Very Low (SaaS) |
+| **Milvus** | <10ms (optimized) | Billions+ | 100,000+ | Good | High |
+| **Weaviate** | <50ms | Millions | 10,000+ | Medium | Medium |
+| **ChromaDB** | Varies | Millions | 1,000-5,000 | Good | Very Low |
+| **Qdrant** | <20ms | Billions | 50,000+ | Excellent | Low-Medium |
+| **FAISS** | <1ms (in-memory) | Billions (RAM limited) | 1,000,000+ | Excellent | High (library) |
+| **pgvector** | 50-200ms | Hundreds of thousands | 100-1,000 | Good | Low (if using Postgres) |
+
+**Performance Rating Legend**:
+- **Query Latency**: Typical p95 response time for similarity search
+- **Max Scale**: Practical operational limits for vector count
+- **Throughput (QPS)**: Approximate queries per second at scale
+- **Memory Efficiency**: How well the database utilizes RAM relative to dataset size
+- **Setup Complexity**: Time and expertise required for initial deployment and configuration
 
 **Notes**:
 - Performance metrics vary significantly based on configuration, hardware, and dataset characteristics
-- Latency numbers are approximate and represent typical scenarios
-- Scale refers to practical operational limits
+- Numbers are approximate and represent typical scenarios with optimized configurations
+- Always conduct your own benchmarks with representative data and query patterns
 
 ## Use Case Recommendations
 
@@ -427,7 +434,7 @@ When choosing a vector database, consider:
 - [pgvector GitHub](https://github.com/pgvector/pgvector)
 
 ### Benchmarks and Comparisons
-- [ann-benchmarks.com](http://ann-benchmarks.com/) - Comprehensive ANN algorithm benchmarks
+- [ann-benchmarks.com](https://ann-benchmarks.com/) - Comprehensive ANN algorithm benchmarks
 - [VectorDBBench](https://github.com/zilliztech/VectorDBBench) - Open-source vector database benchmarking tool
 
 ### Learning Resources
