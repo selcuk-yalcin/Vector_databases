@@ -1,0 +1,28 @@
+# RAG System for Turkish OHS Legislation
+# Python 3.10+
+
+# Vector Database
+pinecone-client>=3.0.0
+
+# Embeddings
+sentence-transformers>=2.2.0
+torch>=2.0.0
+
+# Document Processing & LlamaIndex
+llama-index>=0.10.0
+llama-index-core>=0.10.0
+llama-index-embeddings-huggingface>=0.1.0
+llama-index-vector-stores-pinecone>=0.1.0
+llama-index-llms-openai>=0.1.0
+llama-index-llms-gemini>=0.1.0
+
+# AI Models
+openai>=1.0.0
+google-generativeai>=0.3.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+
+# Optional: PDF processing (if needed)
+PyPDF2>=3.0.0
